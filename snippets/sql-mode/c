@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: count from table
+# key: c
+# --
+
+
+select count(*) from $1;

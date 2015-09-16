@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: createtableas
+# key: ctas
+# --
+
+create table shc_work_tbls.${1:table name} as
+(
+  ${2:column list}
+) with data unique primary index(${3:index column});
+
+select count(*) from shc_work_tbls.${1};
+
+
+printf("${1:format string}"${2: ,a0,a1});

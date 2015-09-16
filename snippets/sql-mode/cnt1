@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: count 1
+# key: cnt1
+# --
+
+
+select $1
+       , count(*)
+from $2
+group by 1
+order by 1;

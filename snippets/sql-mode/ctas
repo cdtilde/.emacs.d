@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: createtableas
+# key: ctas
+# --
+
+
+create table shc_work_tbls.${1:tablename} as
+(
+select ${2:columnlist}
+from
+
+) with data unique primary index(${3:indexcolumn});
+
+select count(*) from shc_work_tbls.$1;
+
+select * from shc_work_tbls.$1 sample 10;
