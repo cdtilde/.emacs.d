@@ -1,37 +1,49 @@
 (defvar e/emacs-load-start (current-time))
+
+(when (version<= emacs-version "24")
+  (message "Your Emacs is old, and some functionality in this config will be disabled. Please upgrade if possible."))
+
+
+(when (version< emacs-version "23")
+  (message "You are using emacs 22") 
+  (setq user-emacs-directory  (directory-file-name (file-name-directory user-init-file))))
+
+
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (require 'init-basics)            ;;
 (require 'init-benchmarking)      ;; Measure startup time
 (require 'init-utils)
-(require 'init-package)
-(require 'init-lisp)
-(require-package 'diminish)
 
-(require 'init-look)
-(require 'init-osx)               ;; OS X specific customizations
-(require 'init-sql)          
-(require 'init-windows)
-(require 'init-mouse)
-(require 'init-exec-path)
-(require 'init-editing)
-(require 'init-fileutils)
-;;(require 'init-org-mode)
-(require 'init-cheatsheets)
-(require 'init-isearch)
-(require 'init-comint)
-(require 'init-gmail)
-(require 'init-helm)
-(require 'init-grep)
-(require 'init-hippie-expand)
-(require 'init-yasnippet)
-(require 'file-to-table)
+(when (not (version< emacs-version "24"))
+  (require 'init-package)
+  (require 'init-lisp)
+  (require-package 'diminish)
 
-;;----------------------------------------------------------------------------
-;; Allow access from emacsclient
-;;----------------------------------------------------------------------------
+  (require 'init-look)
+  (require 'init-osx)               ;; OS X specific customizations
+  (require 'init-sql)          
+  (require 'init-windows)
+  (require 'init-mouse)
+  (require 'init-exec-path)
+  (require 'init-editing)
+  (require 'init-fileutils)
+  ;;(require 'init-org-mode)
+  (require 'init-cheatsheets)
+  (require 'init-isearch)
+  (require 'init-comint)
+  (require 'init-gmail)
+  (require 'init-helm)
+  (require 'init-grep)
+  (require 'init-hippie-expand)
+  (require 'init-yasnippet)
+  (require 'file-to-table)
+  ;;----------------------------------------------------------------------------
+  ;; Allow access from emacsclient
+  ;;----------------------------------------------------------------------------
 (require 'server)
 (unless (server-running-p)
-  (server-start))
+  (server-start)))
+  
 
 
 
