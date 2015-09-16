@@ -1,10 +1,10 @@
-(setq gnus-select-method '(nnimap "gmail"
-(nnimap-address "imap.gmail.com")
-(nnimap-server-port 993)
-(nnimap-stream ssl)
-(send-mail-function (quote smtpmail-send-it))
-(smtpmail-smtp-server "smtp.googlemail.com")
-(smtpmail-smtp-service 587))
+;; (setq gnus-select-method '(nnimap "gmail"
+;; (nnimap-address "imap.gmail.com")
+;; (nnimap-server-port 993)
+;; (nnimap-stream ssl)
+;; (send-mail-function (quote smtpmail-send-it))
+;; (smtpmail-smtp-server "smtp.googlemail.com")
+;; (smtpmail-smtp-service 587))
 
 
 ;; 1) Open Emacs and hit C-x m to bring up the unsent mail buffer
