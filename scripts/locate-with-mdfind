@@ -1,0 +1,23 @@
+#!/bin/bash
+echo "Args: $1 $2 $3 $4"
+SEARCHSTRING=`echo $@ | cut -d'|' -f1`
+GREPSTRING=`echo $@ | cut -d'|' -f2`
+FIRSTCHAR=${SEARCHSTRING:0:1}
+EGREP_EXCLUSION=".DS_Store|.localized|#|~|$HOME/Library/|$HOME/Pictures|$HOME/Music|.swp|.Trash"
+
+
+# For debug
+#echo "Searched for: $SEARCHSTRING   Greping for: $GREPSTRING  First character of search: $FIRSTCHAR"
+
+# if the user typed . as the first character, use find to search instead
+# and only go a few levels down from the home directory
+# was "$SEARCHSTRING"\*
+#if [ "$FIRSTCHAR" = "." ];
+#then
+  #  echo "In find $SEARCHSTRING"
+  # find ~ -type f -maxdepth 5 -name "$SEARCHSTRING" | egrep -v "$EGREP_EXCLUSION" | grep "$GREPSTRING"
+
+# Use mdfind to search the entire hard drive
+#else
+   mdfind -onlyin $HOME -name "$SEARCHSTRING" |  egrep -v "$EGREP_EXCLUSION" | grep "$GREPSTRING"
+#fi
