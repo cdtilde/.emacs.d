@@ -1,14 +1,11 @@
 #!/bin/bash
-ln -s ~/.dotfiles/.emacs ~/.emacs
-ln -s ~/.dotfiles/.bash_profile ~/.bash_profile
-ln -s ~/.dotfiles/.bashrc ~/.bashrc
-ln -s ~/.dotfiles/scripts/e /usr/local/bin/e
-ln -s ~/.dotfiles/scripts/egui /usr/local/bin/egui
-ln -s ~/.dotfiles/scripts/er /usr/local/bin/er
-ln -s ~/.dotfiles/scripts/es /usr/local/bin/es
-ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf 
+ln -s ~/.emacs.d/bash/.bash_profile ~/.bash_profile
+ln -s ~/.emacs.d/bash/.bashrc ~/.bashrc
+ln -s ~/.emacs.d/scripts/e /usr/local/bin/e
+ln -s ~/.emacs.d/scripts/egui /usr/local/bin/egui
+ln -s ~/.emacs.d/scripts/er /usr/local/bin/er
+ln -s ~/.emacs.d/scripts/es /usr/local/bin/es
 
-
-echo "[user]">> ~/.dotfiles/.git/config
-echo "    name=cdtilde" >> ~/.dotfiles/.git/config
-echo "    email=cdtilde@gmail.com" >> ~/.dotfiles/.git/config
+echo "[user]">> ~/.emacs.d/.git/config
+echo "    name=cdtilde" >> ~/.emacs.d/.git/config
+echo "    email=cdtilde@gmail.com" >> ~/.emacs.d/.git/config
