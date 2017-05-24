@@ -1,3 +1,4 @@
+(message "New version")
 (defvar e/emacs-load-start (current-time))
 
 (when (version<= emacs-version "24")
